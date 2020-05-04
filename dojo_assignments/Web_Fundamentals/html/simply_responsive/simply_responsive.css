@@ -1,0 +1,26 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+@media only screen and (max-width: 480px){
+    .wrapper {
+        width: 100%;
+        background-color: #ffffff;
+        padding: 2%;
+    }
+
+    .wrapper p{
+        background-color: gray;
+    }
+
+
+}
+
+@media only screen and (min-width: 1024px){
+    .wrapper p{
+        background-color: yellow;
+        padding: 3%;
+        font-size: 1.5625rem;
+    }
+}

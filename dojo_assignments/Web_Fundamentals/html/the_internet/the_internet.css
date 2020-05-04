@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    width: 970px;
+    height: 300px;
+    margin: 0 auto;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+}
+
+/* beginning of the head section */
+
+#head img {
+    width: 100px;
+    height: 100px;
+    vertical-align: top;
+}
+
+#head h1, #head h2 {
+    font-weight: 100;
+}
+
+#head h1 {
+    display: inline-block;
+    font-size: 55px;
+    margin-top: 20px;
+}
+
+#head span, #side p > span {
+    color: #26669C;
+}
+
+
+#head h2 {
+    background-image: linear-gradient(#26669C, #5485AB, #26669C);
+    font-size: 35px;
+    padding: 10px 20px 10px 20px;
+    margin-top: -18px;
+    color: #ffffff;
+}
+
+
+/* beginning of the main section */
+
+#mainwrap {
+    background-image: linear-gradient(to bottom, #E9E9E9 35% , #FFFFFF);
+    /* background-image: linear-gradient(to bottom, red 90% , yellow); */
+    height: 130px;
+    /* border: 1px solid red; */
+}
+
+#side, #main {
+    display: inline-block;
+}
+
+#side {
+    width: 220px;
+    height: 300px;
+    vertical-align: top;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+
+#side h3 {
+    padding: 30px 0 10px 0;
+}
+
+#side h3 span {
+    color: #D61212;
+}
+
+#side p {
+    padding: 0 0 20px 0;
+}
+
+
+ button {
+    width: 220px;
+    padding: 5px 10px 10px 10px;
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 4px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    box-shadow: 1px 2px 2px #8E8E8E;
+}
+
+button:first-of-type {
+    background-image: linear-gradient(#669AC2, #26669C);
+}
+
+button:last-of-type {
+    background-image: linear-gradient(#E9AD5E, #EE7301);
+    margin-bottom: 25px;
+}
+
+#side .upper {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #9A9A9A;
+}
+
+/* beginning of lower side content */
+
+#side .lower {
+    width: 210px;
+    padding: 5px;
+    background-image: url("img/ad_background.png");
+    box-shadow: 1px 2px 2px #000;
+}
+
+ #side .lower h3 {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 100;
+    font-size: 25px;
+}
+
+.lower img {
+    width: 110px;
+    height: auto;
+    display: block;
+    margin: -15px auto;
+}
+
+.lower button {
+    width: 175px;
+    font-size: 16px;
+    display: block;
+    margin: 30px auto;
+    padding-bottom: 5px;
+    box-shadow: none;
+    background-image: linear-gradient(#7FD0DE, #01C1DD)
+}
+
+.lower a {
+    text-decoration: none;
+}
+/* beginning of the main section */
+
+#main {
+    width: 685px;
+    margin-left: -5px;
+    padding: 0 10px 0 40px;
+}
+
+#main .upper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #9A9A9A;
+}
+
+
+.left, .right {
+    display: inline-block;
+}
+
+.left img {
+    width: 17px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.left a {
+    text-decoration: none;
+    color: #326EA1;
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 17px;
+}
+
+.right table{
+    display: inline-block;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+td[rowspan="3"] {
+    padding-right: 5px;
+    vertical-align: bottom;
+}
+
+.right img{
+    width: 40px;
+    height: auto;
+}
+
+.contact {
+    font-size: 10px;
+}
+
+#phone {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00C0DD;
+}
+
+/* beginning of the main middle section */
+
+.middle p span:nth-child(n+2){
+    font-weight: bold;
+    color: #000000;
+}
+
+.middle h3, .lower h3 {
+    color: #26669C;
+    margin: 5px 0;
+}
+
+.middle span {
+    color: #0397AD;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul ul {
+    margin-left: 40px;
+    list-style-type: disc;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+ol {
+    margin-left: 40px;
+}
+
+.middle img {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+}
+
+/* beginning of the lower section */
+
+ #main .lower {
+    border-left: 5px solid #0087DD;
+    border-right: 5px solid #0087DD;
+    border-top: 5px solid #0087DD;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+#main .lower img {
+    width: 130px;
+}
+
+.lower td {
+    text-align: left;
+    padding-left: 10px;
+}
+

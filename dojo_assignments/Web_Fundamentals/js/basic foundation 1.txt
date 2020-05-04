@@ -1,0 +1,48 @@
+12/15 predicted correctly.
+
+1. predicted 35
+answer: 35
+
+2. predicted 8
+answer: 8
+
+3. predicted 6
+answer: 6
+
+4. predicted 3, 9
+answer: 3,9
+
+5. predicted 40, 10
+answer: 40
+
+6. predicted 4
+answer: 4
+
+7. predicted 10, 3, 30
+answer: 10, 3, 30
+
+
+8. predicted 3,4
+answer 3,4
+
+9. predicted undefined
+answer: 2,5,8,11
+
+10. predicted 0,1,2,3,4,5,6,7,8,9,0
+answer: 0,1,2,3,4,5,6,7,8,9,0
+
+11. predicted 0-9 * 9, 0-1
+answer: no output
+
+12. predicted no output
+answer: no output
+
+13. predicted 10
+answer: 10
+
+14. predicted 15, 10
+answer: 15, 10
+
+15. predicted 15, 15
+answer: 15, 15
+

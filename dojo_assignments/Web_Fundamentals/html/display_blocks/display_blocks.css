@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    min-height: 400px;
+    width: 950px;
+    margin: 0 auto;
+    background-color: #D5D2AE;
+}
+
+.header img {
+    width: 150px;
+    height: 75px;
+}
+
+.header img, .header h1 {
+    display: inline-block;
+}
+
+.header {
+    text-align: center;
+}
+
+.blocks {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.blocks img {
+    width: 125px;
+    border: 20px solid #81B4EE;
+    margin-bottom: -4px;
+}
+
+.box {
+    border: 5px solid black;
+    display: inline-block;
+}
+
+.odd img {
+    background-color: #F36870;
+    border: 20px solid #F36870;
+}
+
+.row {
+    margin-bottom: 3px;
+}
