@@ -30,10 +30,30 @@ def iterateDictionary(some_list):
         for x, y in index.items():
             print(f"{x} - {y}")
 
+# def iterateDictionary(students):
+#     #this is going to loop through each item in the list, called students
+#     for item in students: 
+#         #to loop through the keys of items
+#         for key in item:
+#             print(key + " - " + item[key])
+#             print(f"{key} - {item[key]}")
+
+#to print fancy: 
+def iterateDictionary(students):
+    #this is going to loop through each item in the list, called students
+    for item in students: 
+        toPrint = ""
+        for key in item:
+            toPrint += f"{key} - {item[key]},"
+        print(toPrint    )
+
 #3.
 def iterate2(key_name,some_list):
     for i in range(len(some_list)):
         print(some_list[i][f"{key_name}"])
+
+    for item in some_list
+        print(item[key_name])
 
 #4.
 dojo = {
@@ -50,3 +70,12 @@ def printInfo(some_dict):
         
 
 printInfo(dojo)
+
+
+for key, value in some_dict:
+    print(f"{len(value)} {key.upper()}")
+        for item in value:
+            print(item)
+
+
+
