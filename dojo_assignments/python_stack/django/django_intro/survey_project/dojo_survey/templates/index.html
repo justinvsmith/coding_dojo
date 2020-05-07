@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey Index</title>
+</head>
+<body>
+    <div>
+        <form action="/results" method="post">
+            {% csrf_token %}
+            <label for="name">Your Name:</label>  
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Your Email:</label>  
+            <input type="text" id="email" name="email"><br>
+            <label for="loc">Dojo Location:</label> 
+            <select id="loc" name="location">
+                <option value="Arlington">Arlington</option>
+                <option value="Boise">Boise</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Dallas">Dallas</option>
+                <option value="LA">LA</option>
+                <option value="Oakland">Oakland</option>
+                <option value="OC">OC</option>
+                <option value="San Jose">San Jose</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Tulsa">Tulsa</option>
+            </select><br>
+            <label for="language">Favorite Language:</label> 
+            <select id="language" name="language">
+                <option value="Java">Java</option>
+                <option value="Ruby">Ruby</option>
+                <option value="C#">C#</option>
+                <option value="PHP">PHP</option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Rust">Rust</option>
+            </select><br>
+            <p>How did you hear about Coding Dojo?</p>
+            <label for="referral">Website</label>
+            <input type="checkbox" id='website' name="referral" value="website">
+            <label for="referral">YouTube</label>
+            <input type="checkbox" id='youtube' name="referral" value="youtube">
+            <label for="referral">Hulu</label>
+            <input type="checkbox" id='referral' name="referral" value="hulu">
+            <br><label for="comments">Comments (optional)</label><br>
+            <textarea name="comments" id="comments" cols="30" rows="10"></textarea><br>
+            <p>Can we send you emails aboout the Dojo?</p>
+            <label for="yes">heck yes!</label>
+            <input type="radio" id="yes" name="contact" value="yes">
+            <label for="no">I'd rather you didn't</label>
+            <input type="radio" id="no" name="contact" value="no">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
