@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Fruit Store</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/dojo_fruit_store.css' %}">
+</head>
+<body>
+    <div class="container"> 
+        <div class="left">
+              <h1>Thank you for your order!</h1>
+              <p>We are charging {{ name_from_form }} for {{ count }} fruits. The individual breakdown is noted below:</p>
+              <div class="select">
+                <h3>You've Ordered</h3>
+                  <table>
+                    <tr>
+                      <th>Fruit Name</th>
+                      <th>Quantity</th>
+                    </tr>
+                    <tr>
+                      <td>Strawberry</td>
+                      <td>{{ strawberry_count }}</td>
+                    </tr>
+                    <tr>
+                      <td>Raspberry</td>
+                      <td>{{ raspberry_count }}</td>
+                    </tr>
+                    <tr>
+                      <td>Apple</td>
+                      <td>{{ apple_count }}</td>
+                    </tr>
+                  </table>
+              </div>
+              <div class="student">
+                  <h3>Your Information</h3>
+                    <table>
+                      <tr>
+                        <td>Name:</td>
+                        <td>{{ name_from_form }}</td>
+                      </tr>
+                      <tr>
+                        <td>Your Student ID:</td>
+                        <td>{{ id_from_form }}</td>
+                      </tr>
+              </div>
+          </div> 
+      </div>
+      </div>
+      
+</body>
+</html>

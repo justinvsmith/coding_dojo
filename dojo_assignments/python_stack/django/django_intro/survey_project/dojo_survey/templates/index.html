@@ -4,53 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dojo Survey Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dojo_survey.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 <body>
-    <div>
+    <div class="container">
         <form action="/results" method="post">
             {% csrf_token %}
-            <label for="name">Your Name:</label>  
-            <input type="text" id="name" name="name"><br>
-            <label for="email">Your Email:</label>  
-            <input type="text" id="email" name="email"><br>
-            <label for="loc">Dojo Location:</label> 
-            <select id="loc" name="location">
-                <option value="Arlington">Arlington</option>
-                <option value="Boise">Boise</option>
-                <option value="Chicago">Chicago</option>
-                <option value="Dallas">Dallas</option>
-                <option value="LA">LA</option>
-                <option value="Oakland">Oakland</option>
-                <option value="OC">OC</option>
-                <option value="San Jose">San Jose</option>
-                <option value="Seattle">Seattle</option>
-                <option value="Tulsa">Tulsa</option>
-            </select><br>
-            <label for="language">Favorite Language:</label> 
-            <select id="language" name="language">
-                <option value="Java">Java</option>
-                <option value="Ruby">Ruby</option>
-                <option value="C#">C#</option>
-                <option value="PHP">PHP</option>
-                <option value="Python">Python</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="Rust">Rust</option>
-            </select><br>
-            <p>How did you hear about Coding Dojo?</p>
-            <label for="referral">Website</label>
-            <input type="checkbox" id='website' name="referral" value="website">
-            <label for="referral">YouTube</label>
-            <input type="checkbox" id='youtube' name="referral" value="youtube">
-            <label for="referral">Hulu</label>
-            <input type="checkbox" id='referral' name="referral" value="hulu">
-            <br><label for="comments">Comments (optional)</label><br>
-            <textarea name="comments" id="comments" cols="30" rows="10"></textarea><br>
-            <p>Can we send you emails aboout the Dojo?</p>
-            <label for="yes">heck yes!</label>
-            <input type="radio" id="yes" name="contact" value="yes">
-            <label for="no">I'd rather you didn't</label>
-            <input type="radio" id="no" name="contact" value="no">
-            <button type="submit">Submit</button>
+            <div class="form-group row">
+            <label class="col-form-label col-sm-3" for="name">Your Name:</label>  
+            <input class="form-control col-sm-3" type="text" id="name" name="name"><br>
+            </div>
+            <div class="form-group row">
+            <label class="col-form-label col-sm-3" for="email">Your Email:</label>  
+            <input class="form-control col-sm-3" type="text" id="email" name="email"><br>
+            </div>
+                <div class="form-group row">
+                <label class="col-form-label col-sm-3" for="loc">Dojo Location:</label> 
+                <select class="form-control col-sm-3" id="loc" name="location">
+                    <option value="Arlington">Arlington</option>
+                    <option value="Boise">Boise</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Dallas">Dallas</option>
+                    <option value="LA">LA</option>
+                    <option value="Oakland">Oakland</option>
+                    <option value="OC">OC</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Tulsa">Tulsa</option>
+                </select>
+                </div>
+                <div class="form-group row">
+                <label class="col-form-label col-sm-3" for="language">Favorite Language:</label> 
+                <select class="form-control col-sm-3" id="language" name="language">
+                    <option value="Java">Java</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="C#">C#</option>
+                    <option value="PHP">PHP</option>
+                    <option value="Python">Python</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Rust">Rust</option>
+                </select>
+                </div>
+                <div class="form-group row">
+                <label class="col-form-label col-sm-3" for="comments">Comments (optional)</label><br>
+                </div>
+                <div class="form-group row">
+                <textarea class="form-control col-sm-5 feedback" name="comments" id="comments" cols="10"></textarea><br>
+                </div>
+            <p>Can we send you emails about the Dojo?</p>
+            <div class="form-group row">
+            <label class="col-form-label col-sm-2" for="yes">heck yes!</label>
+            <input  class="col-form-label" type="radio" id="yes" name="contact" value="yes">
+            <label class="col-form-label col-sm-2" for="no">I'd rather you didn't</label>
+            <input class="col-form-label" type="radio" id="no" name="contact" value="no">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
         </form>
     </div>
 </body>
