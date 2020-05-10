@@ -1,0 +1,21 @@
+.wrapper {
+    width: 600px;
+    height: 200px;
+    text-align: center;
+    margin: auto;
+}
+
+.number {
+    border: 1px solid black;
+    width: 85%;
+    height: 66px;
+    padding: 5px;
+    font-size: 3em;
+    margin: auto;
+}
+
+button {
+    margin-top: 20px;
+    width: 28%;
+    padding: 10px;
+}
