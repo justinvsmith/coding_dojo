@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C+R Users</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/users_app.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="upper">
+            <h1>All the Users</h1>
+            <table>
+                {% for items in headers %}
+                    <th>{{ items }}</th>
+                {% endfor %}
+                {% for people in all_the_users %}
+                <tr>
+                    <td>{{ people.id }}</td>
+                    <td>{{ people.first_name }} {{ people.last_name }}</td>
+                    <td>{{ people.email_address }}</td>
+                    <td>{{ people.age }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="middle"></div>
+        <div class="lower">
+            <h1>Add a User</h1>
+            <div class="lowwrap">
+                <form action="/new_user" method="post">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3" for="first_name">First Name</label>
+                        <input class="col-form-label col-sm-3" type="text" id="first_name" name="first_name">
+                        <label class="col-form-label col-sm-3" for="last_name">Last Name</label>
+                        <input class="col-form-label col-sm-3" type="text" id="last_name" name="last_name">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3" for="email">Email</label>
+                        <input class="col-form-label col-sm-3" type="text" id="email" name="email_address">
+                        <label class="col-form-label col-sm-3" for="age">Age</label>
+                        <input class="col-form-label col-sm-3" type="text" id="age" name="age"> 
+                    </div> 
+                    <button class="btn btn-primary" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
