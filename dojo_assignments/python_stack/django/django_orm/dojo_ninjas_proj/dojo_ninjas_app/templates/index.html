@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos & Ninjas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/ninja_app.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="dojo_form">
+            <h2>Add a Dojo</h2>
+            <form action="/new_dojo" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <label for="dojo_name">Name</label>
+                    <input type="text" id="dojo_name" name="name">
+                </div>
+                <div class="row">
+                    <label for="dojo_city">City</label>
+                    <input type="text" id="dojo_city" name="city">
+                </div>
+                <div class="row">
+                    <label for="dojo_state">State</label>
+                    <input type="text" id="dojo_state" name="state">
+                </div>
+                <div class="row">
+                    <label for="dojo_desc">State</label>
+                    <input type="text" id="dojo_desc" name="desc">
+                </div>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <div class="ninja_form">
+            <h2>Add a Ninja</h2>
+            <form action="/new_ninja" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name">
+                </div>
+                <div class="row">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name">
+                </div>
+                <div class="row">
+                    <label for="dojo_id"></label>
+                    <select name="dojo_id" id="dojo_id">
+                        {% for dojo in dojos %}
+                        <option value="{{dojo.id}}">{{dojo.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <!-- <div class="row">
+                    {% for dojo in dojos %}
+                    <label for="dojo_id"></label>
+                    <select name="dojo_id" id="dojo_id">
+                    <option value="{{dojo.dojos.id}}">Arlington</option>
+                    <option value="">Boise</option>
+                    <option value="{{dojo.dojos.id}}">Chicago</option>
+                    <option value="5">Dallas</option>
+                    <option value="4">LA</option>
+                    <option value="7">Oakland</option>
+                    <option value="">OC</option>
+                    <option value="">San Jose</option>
+                    <option value="">Seattle</option>
+                    <option value="0">Tulsa</option>
+                    </select>
+                    {% endfor %}
+                </div> -->
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <div class="middle"></div>
+        <div class="lower">
+            <h2>All the Dojos</h2>
+            {% for dojo in dojos %}
+            <h3>Ninjas at the {{dojo.name}} Dojo</h3>
+            <ul>
+                {% for ninja in dojo.ninjas.all %}
+                <li>{{ninja.first_name}}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

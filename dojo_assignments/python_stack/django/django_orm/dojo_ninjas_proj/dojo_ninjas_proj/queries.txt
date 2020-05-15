@@ -1,0 +1,40 @@
+Query: Create 3 new dojos:
+    Dojo.objects.create(name = "LA_Dojo", city = "Los Angeles", state = "California")
+    Dojo.objects.create(name = "Dallas_Dojo", city = "Dallas", state = "TX")
+    Dojo.objects.create(name="Chicago_Dojo", city = "Chicago", state = "IL")
+
+Query: Delete the 3 dojos you just created:
+    Dojo.objects.get(id=1).delete()
+    Dojo.objects.all().delete()
+
+Query: Create 3 more dojos:
+    dojo1 = Dojo.objects.create(name = "LA_Dojo", city = "Los Angeles", state = "California")
+    dojo2 = Dojo.objects.create(name = "Dallas_Dojo", city = "Dallas", state = "TX")
+    dojo3 = Dojo.objects.create(name="Chicago_Dojo", city = "Chicago", state = "IL")
+
+Query: Create 3 ninjas that belong to the first dojo:
+    student1 = Ninja.objects.create(dojo_id_id=4, first_name = "Jessica", last_name = "Jones")
+    student2 = Ninja.objects.create(dojo_id_id=4, first_name = "Luke", last_name = "Cage")
+    student3 = Ninja.objects.create(dojo_id_id=4, first_name = "Matt", last_name = "Murdock")
+
+Query: Create 3 ninjas that belong to the second dojo:
+    student4 = Ninja.objects.create(dojo_id_id=5, first_name = "Carol", last_name = "Danvers")
+    student5 = Ninja.objects.create(dojo_id_id=5, first_name = "Tony", last_name = "Stark")
+    student6 = Ninja.objects.create(dojo_id_id=5, first_name = "Natasha", last_name = "Romanov")
+
+Query: Create 3 ninjas that belong to the second dojo:
+    student7 = Ninja.objects.create(dojo_id_id=6, first_name = "Bruce", last_name = "Banner")
+    student8 = Ninja.objects.create(dojo_id_id=6, first_name = "Steve", last_name = "Rogers")
+    student9 = Ninja.objects.create(dojo_id_id=6, first_name = "Peter", last_name = "Parker")
+
+Query: Retrieve all the ninjas from the first dojo
+    Dojo.objects.first().ninjas.all()
+
+Query: Retrieve all the ninjas from the last dojo
+    Dojo.objects.last().ninjas.all()
+
+Query: Retrieve te last ninja's dojo
+    Ninja.objects.last().dojo_id.name
+
+Query: Create a new dojo:
+    Dojo.objects.create(name="Oakland_Dojo", city = "Oakland", state = "CA", desc = "This is the dojo serving Berkeley, Oakland, and other East Bay Area cities.")
