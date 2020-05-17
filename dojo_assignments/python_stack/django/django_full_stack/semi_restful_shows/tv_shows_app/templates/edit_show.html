@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restful TV Shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/tv_shows.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="center">
+            <a href="/shows/">Go back</a>
+            <h1>Edit Show {{edit_show.id}}</h1>
+            {% if messages %}
+        <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+        </ul>
+        {% endif %}
+            <form action="/shows/{{edit_show.id}}/update" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <label class="col-lg-2" for="face">Title</label>
+                </div>
+                <div class="row">
+                    <input class="col-lg-5" id="face" name="title" type="text" value="{{edit_show.title}}">
+                </div>
+                <br>
+                <div class="row">
+                    <label class="col-md-2" for="network">Network</label>
+                    <label class="col-md-3" for="release_date">Release Date</label>
+                </div>
+                <div class="row">
+                    <input class="col-sm-2" type="text" id="network" name="network" value="{{edit_show.network}}"><br>
+                    <input class="col-md-2 date" type="date" id="release_date" name="release_date" value="{{edit_show.release_date|date:'Y-m-d'}}">
+                </div>
+                <br>
+                <div class="row">
+                    <label for="description">Description</label>
+                </div>
+                <div class="row">
+                    <textarea class="col-lg-5"name="description" id="description" cols="30" rows="10">{{edit_show.description}}</textarea>
+                </div>
+                <div class="button">
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+            <a class="last" href="/shows/{{edit_show.id}}">Go To Show</a>
+        </div>
+    </div>
+</body>
+</html>
