@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wall</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/wall_app.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <h3>CodingDojo Wall</h3>
+        </div>
+        <div class="right">
+            <h6>Hello {{an_user.first_name}}!</h6>
+            <a href="/logout">log off</a>
+        </div>
+    </div>
+    <div class="wrapper container">
+        <form action="/wall/new_msg" method="post">
+            {% csrf_token %}
+            <div class="row"> 
+                <label for="post">Post a Message</label><br>
+            </div>
+            <div class="center">
+                <input type="hidden" name="user_id" value="{{an_user.id}}">
+                <textarea class="form-control form-control-sm" name="message" id="post" cols="130" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+            <button class="btn btn-primary float-right" type="submit">Post a message</button>
+            </div>
+        </form>
+    </div>
+    <div class="main">
+        {% for post in messages %}
+        <h1>{{post.id}}</h1>
+        <h2>{{post.created_at}}</h2>
+        <p>{{post.message}}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

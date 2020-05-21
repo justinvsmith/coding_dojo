@@ -3,10 +3,10 @@ def index(request):
     return HttpResponse("placeholder to display a list of all blogs")
 
 def new(request):
-    return HttpResponse("placeholder to display a new form to create a new blog")
+    return HttpResponse("placeholder to display a new form to create a new blog <a href='/users/new'>link</a>")
 
 def create(request):
-    return redirect('/home')
+    return redirect('/')
 
 def show(request, number):
     return HttpResponse(f"placeholder to display blog number: {number}")
